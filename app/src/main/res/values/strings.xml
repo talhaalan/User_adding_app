@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kullanici_adi">Username: "</string>
+    <string name="sifre">Password: "</string>
+    <string name="helper_text_name">Username must be at least 6 characters. </string>
+    <string name="helper_text_password">Password must be at least 6 characters. </string>
+    <string name="password">Password</string>
+    <string name="save_button">Save</string>
+    <string name="user_name">Username</string>
+    <string name="update_button">Update</string>
+    <string name="add_user">Add User</string>
+    <string name="empty_error_message">Please enter username!</string>
+    <string name="empty_error_message_password">Please enter password!!</string>
+    <string name="size_error_message">Username must be at least 6 characters.</string>
+    <string name="size_error_message_password">Password must be at least 6 characters.</string>
+    <string name="users">Users</string>
+    <string name="delete_alert_message">Are you sure you want to delete?</string>
+    <string name="delete_alert">Delete</string>
+    <string name="yes_alert">Yes</string>
+    <string name="cancel_alert">Cancel</string>
+    <string name="none_users_message">NONE USERS</string>
+    <string name="edit_user">Edit User</string>
+    <string name="user_edited_message">User Edited</string>
+    <string name="ok_message">Okey</string>
+    <string name="birth_date">Birth Date: "</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="user_size">Size: </string>
+    <string name="user_kilos">Kilos: </string>
+    <string name="hi">Hi</string>
+    <string name="welcome">Welcome to the app...</string>
+
+
+</resources>

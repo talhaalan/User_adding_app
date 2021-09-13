@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="textSize_editText">16sp</dimen>
+    <dimen name="textSize_button">18sp</dimen>
+    <dimen name="textSize_medium">20sp</dimen>
+    <dimen name="textSize_small">16sp</dimen>
+
+    <dimen name="margin_cardView">4dp</dimen>
+    <dimen name="margin_editText">16dp</dimen>
+    <dimen name="margin_button">8dp</dimen>
+
+    <dimen name="margin_snackbar">16dp</dimen>
+    <dimen name="margin_spinner">15dp</dimen>
+
+    <dimen name="margin_button_save_update">40dp</dimen>
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="margin_usernameText">24sp</dimen>
+    <dimen name="margin_passwordText">24sp</dimen>
+    <dimen name="margin_deleteButton">10dp</dimen>
+
+
+    
+    <dimen name="padding_editText">20dp</dimen>
+
+
+</resources>

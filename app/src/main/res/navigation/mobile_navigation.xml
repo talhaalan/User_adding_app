@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_formFragment"
+            app:destination="@id/formFragment"
+            app:popUpTo="@+id/formFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateUserFragment"
+            app:destination="@id/updateUserFragment" />
+        <argument
+            android:name="editUser"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="user"
+            app:argType="com.example.fragments.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.example.fragments.FormFragment"
+        android:label="FormFragment" >
+        <action
+            android:id="@+id/action_formFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"/>
+        <argument
+            android:name="editName"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="editPassword"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="editId"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="editDate"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="editSize"
+            app:argType="com.example.fragments.User" />
+        <argument
+            android:name="editKilos"
+            app:argType="com.example.fragments.User" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/updateUserFragment"
+        android:name="com.example.fragments.UpdateUserFragment"
+        android:label="fragment_update_user"
+        tools:layout="@layout/fragment_update_user">
+        <action
+            android:id="@+id/action_updateUserFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
