@@ -32,6 +32,13 @@
     <string name="user_kilos">Kilos: </string>
     <string name="hi">Hi</string>
     <string name="welcome">Welcome to the app...</string>
+    <string name="register_text">Register</string>
+    <string name="login_text">Login</string>
+    <string name="new_account_text">Create a new Account</string>
+    <string name="username_text">Username</string>
+    <string name="have_an_account">Already have an Account? Login</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="exit">Exit</string>
 
 
 </resources>

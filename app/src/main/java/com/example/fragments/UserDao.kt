@@ -16,5 +16,4 @@ interface UserDao {
     @Query("SELECT * FROM user ORDER BY userId DESC")
     fun getAllUsers() : List<User>
 
-
 }

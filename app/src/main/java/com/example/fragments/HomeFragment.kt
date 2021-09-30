@@ -10,9 +10,10 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.os.bundleOf
@@ -36,7 +37,7 @@ class HomeFragment : Fragment() {
 
         val view = binding.root
 
-        notificationChannel()
+        //notificationChannel()
 
         binding.buttonForm.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_formFragment)
@@ -44,6 +45,13 @@ class HomeFragment : Fragment() {
 
         binding.toolbarHome.title = getString(R.string.users)
 
+
+
+        val registerDatabase = UserDatabase.getUserDatabase(requireContext())
+        val registerUserList : ArrayList<RegisterUser> = registerDatabase?.registerUserDao()?.getAllRegisterUsers() as ArrayList<RegisterUser>
+        for (r in registerUserList) {
+            println("id : " + r.registerUserId)
+        }
 
         recyclerView = view.findViewById(R.id.recyclerView)
 
@@ -144,15 +152,27 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setHasOptionsMenu(true)
+
+        activity?.onBackPressedDispatcher?.addCallback(this,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                // Back Pressed
+                activity?.finish()
+            }
+
+        })
+
+
         object : CountDownTimer(10000,1000) {
             override fun onTick(millisUntilFinished: Long) {
                 println("m: " + millisUntilFinished / 1000)
             }
 
             override fun onFinish() {
-                notificationStart()
+                //notificationStart()
             }
 
         }.start()
     }
+
 }

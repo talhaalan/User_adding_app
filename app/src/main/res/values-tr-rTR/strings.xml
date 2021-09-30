@@ -33,5 +33,12 @@
     <string name="user_kilos">Kilo: </string>
     <string name="hi">Merhaba</string>
     <string name="welcome">Uygulamaya hoşgeldin...</string>
+    <string name="register_text">Kayıt Ol</string>
+    <string name="login_text">Giriş Yap</string>
+    <string name="new_account_text">Yeni Hesap Oluştur</string>
+    <string name="username_text">Kullanıcı Adı</string>
+    <string name="have_an_account">Hesabın var mı? Giriş Yap</string>
+    <string name="delete_account">Hesabı Sil</string>
+    <string name="exit">Çıkış Yap</string>
 
 </resources>
