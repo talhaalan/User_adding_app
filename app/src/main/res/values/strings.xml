@@ -39,6 +39,17 @@
     <string name="have_an_account">Already have an Account? Login</string>
     <string name="delete_account">Delete Account</string>
     <string name="exit">Exit</string>
+    <string name="profile">Profile</string>
+    <string name="save">Save</string>
+    <string name="saved">It saved.</string>
+    <string name="updated">Updated</string>
+    <string name="age">Age</string>
+    <string name="school">School</string>
+    <string name="job">Job</string>
+    <string name="profile_photo_error_message">Please add Profile photo.</string>
+    <string name="homepage">Home Page</string>
+    <string name="invalid_email_message">Invalid Email address, please enter in "abc@example.com" format.</string>
+    <string name="empty_text">This field cannot be left blank</string>
 
 
 </resources>

@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_homeFragment_to_registerFragment2"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/formFragment"
@@ -88,6 +91,9 @@
             android:name="isExit"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_registerFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -120,5 +126,17 @@
             android:id="@+id/action_userNewRegisterFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.fragments.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_self"
+            app:destination="@id/userProfileFragment" />
     </fragment>
 </navigation>

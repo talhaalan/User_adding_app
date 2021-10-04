@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -22,6 +23,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fragments.databinding.FragmentHomeBinding
+import android.content.SharedPreferences
+import android.content.Context.MODE_PRIVATE
+import com.squareup.picasso.Picasso
+
 
 class HomeFragment : Fragment() {
 
@@ -45,6 +50,19 @@ class HomeFragment : Fragment() {
 
         binding.toolbarHome.title = getString(R.string.users)
 
+        /*
+        binding.toolbarHome.inflateMenu(R.menu.menu)
+        binding.toolbarHome.setOnMenuItemClickListener(Toolbar.OnMenuItemClickListener {
+            when(it.itemId) {
+                R.id.user_profile -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_userProfileFragment)
+                }
+            }
+            true
+        })
+
+         */
+
 
 
         val registerDatabase = UserDatabase.getUserDatabase(requireContext())
@@ -52,6 +70,20 @@ class HomeFragment : Fragment() {
         for (r in registerUserList) {
             println("id : " + r.registerUserId)
         }
+
+        val profile: SharedPreferences = requireContext().getSharedPreferences("sharedPref",
+            MODE_PRIVATE)
+
+        val data = profile.getString("imageData","null")
+        val profilePhoto = Uri.parse(data)
+        Picasso.get().load(profilePhoto).transform(CircleTransform()).into(binding.toolbarProfileImage)
+
+        binding.toolbarProfileImage.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_userProfileFragment)
+        }
+
+
+
 
         recyclerView = view.findViewById(R.id.recyclerView)
 
@@ -163,6 +195,7 @@ class HomeFragment : Fragment() {
         })
 
 
+        /*
         object : CountDownTimer(10000,1000) {
             override fun onTick(millisUntilFinished: Long) {
                 println("m: " + millisUntilFinished / 1000)
@@ -173,6 +206,8 @@ class HomeFragment : Fragment() {
             }
 
         }.start()
+
+         */
     }
 
 }

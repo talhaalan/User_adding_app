@@ -17,7 +17,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            >
+                <ImageView
+                    android:id="@+id/toolbarProfileImage"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/ic_profile_person_24"/>
+
+
+        </androidx.appcompat.widget.Toolbar>
 
 
         <androidx.appcompat.widget.AppCompatTextView

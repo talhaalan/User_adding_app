@@ -2,7 +2,7 @@
 <resources>
 
     <dimen name="textSize_editText">16sp</dimen>
-    <dimen name="textSize_button">18sp</dimen>
+    <dimen name="textSize_button">17sp</dimen>
     <dimen name="textSize_medium">20sp</dimen>
     <dimen name="textSize_small">16sp</dimen>
 

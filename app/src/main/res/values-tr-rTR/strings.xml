@@ -40,5 +40,16 @@
     <string name="have_an_account">Hesabın var mı? Giriş Yap</string>
     <string name="delete_account">Hesabı Sil</string>
     <string name="exit">Çıkış Yap</string>
+    <string name="profile">Profil</string>
+    <string name="save">Kaydet</string>
+    <string name="saved">Kayıt edildi.</string>
+    <string name="updated">Güncellendi.</string>
+    <string name="age">Yaş</string>
+    <string name="school">Okul</string>
+    <string name="job">İş</string>
+    <string name="profile_photo_error_message">Lütfen Profil fotoğrafı ekleyin.</string>
+    <string name="homepage">Ana Sayfa</string>
+    <string name="invalid_email_message">Geçersiz E-posta adresi,lütfen "abc@example.com" formatında girin.</string>
+    <string name="empty_text">Bu alan boş bırakılmaz</string>
 
 </resources>
