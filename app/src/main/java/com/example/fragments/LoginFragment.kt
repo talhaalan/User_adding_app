@@ -41,9 +41,12 @@ class LoginFragment : Fragment() {
         }
 
         val loginUser = sharedPreferences.getBoolean("sharedLogin",false)
+        /*
         if (loginUser == true) {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
+
+         */
 
         binding.textViewBackRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_userNewRegisterFragment)
@@ -58,7 +61,7 @@ class LoginFragment : Fragment() {
         activity?.onBackPressedDispatcher?.addCallback(this,object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 // Back Pressed
-                //activity?.finish()
+                activity?.finish()
             }
         })
     }
@@ -68,14 +71,13 @@ class LoginFragment : Fragment() {
         val database = UserDatabase.getUserDatabase(requireContext())
 
         val userList: ArrayList<RegisterUser> =
-            database?.registerUserDao()?.getAllRegisterUsers() as ArrayList<RegisterUser>
+            database?.registerUserDao()?.getAllRegister() as ArrayList<RegisterUser>
         for (user in userList) {
             if (user.registerUsername == username && user.registerPassword == password) {
                 println("giriş başarılı")
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             } else {
                 binding.textInputLayoutUsername.error = "Bilgileri kontrol et"
-                binding.textInputLayoutPassword.error = "Bilgileri kontrol et"
                 println("giriş başarısız")
             }
         }

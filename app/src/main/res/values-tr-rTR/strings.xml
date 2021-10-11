@@ -51,5 +51,8 @@
     <string name="homepage">Ana Sayfa</string>
     <string name="invalid_email_message">Geçersiz E-posta adresi,lütfen "abc@example.com" formatında girin.</string>
     <string name="empty_text">Bu alan boş bırakılmaz</string>
+    <string name="update_info_text">Lütfen bilgileri güncelleyin.</string>
+    <string name="add_photo_from_camera">Kameradan seç</string>
+    <string name="add_photo_from_gallery">Galeriden seç</string>
 
 </resources>

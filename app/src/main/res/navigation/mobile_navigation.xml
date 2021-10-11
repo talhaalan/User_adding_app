@@ -138,5 +138,8 @@
         <action
             android:id="@+id/action_userProfileFragment_self"
             app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

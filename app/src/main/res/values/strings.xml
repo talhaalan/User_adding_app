@@ -50,6 +50,9 @@
     <string name="homepage">Home Page</string>
     <string name="invalid_email_message">Invalid Email address, please enter in "abc@example.com" format.</string>
     <string name="empty_text">This field cannot be left blank</string>
+    <string name="update_info_text">Please update the information.</string>
+    <string name="add_photo_from_camera">Add Photo From Camera</string>
+    <string name="add_photo_from_gallery">Add Photo From Gallery</string>
 
 
 </resources>

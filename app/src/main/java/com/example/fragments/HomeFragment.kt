@@ -25,6 +25,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fragments.databinding.FragmentHomeBinding
 import android.content.SharedPreferences
 import android.content.Context.MODE_PRIVATE
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.picasso.Picasso
 
 
@@ -36,6 +41,11 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -43,6 +53,17 @@ class HomeFragment : Fragment() {
         val view = binding.root
 
         //notificationChannel()
+
+
+        val database = UserDatabase.getUserDatabase(requireContext())
+
+        val userImage : ArrayList<UserImage> = database?.userImageDao()?.getUserImage() as ArrayList<UserImage>
+        //val userProfile : ArrayList<UserProfile> = database?.userProfileDao()?.getAllUserProfile() as ArrayList<UserProfile>
+
+        for (profilePhoto in userImage) {
+            binding.toolbarProfileImage.setImageBitmap(profilePhoto.profilePhoto)
+        }
+
 
         binding.buttonForm.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_formFragment)
@@ -71,12 +92,7 @@ class HomeFragment : Fragment() {
             println("id : " + r.registerUserId)
         }
 
-        val profile: SharedPreferences = requireContext().getSharedPreferences("sharedPref",
-            MODE_PRIVATE)
 
-        val data = profile.getString("imageData","null")
-        val profilePhoto = Uri.parse(data)
-        Picasso.get().load(profilePhoto).transform(CircleTransform()).into(binding.toolbarProfileImage)
 
         binding.toolbarProfileImage.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_userProfileFragment)

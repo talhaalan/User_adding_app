@@ -14,22 +14,31 @@
             android:background="@color/purple_500"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-                <ImageView
-                    android:id="@+id/toolbarProfileImage"
-                    android:layout_marginEnd="8dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:cardCornerRadius="150dp"
                     android:layout_alignParentEnd="true"
                     android:layout_gravity="end"
-                    app:srcCompat="@drawable/ic_profile_person_24"/>
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/toolbarProfile">
 
+                        <ImageView
+                            android:id="@+id/toolbarProfileImage"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:srcCompat="@drawable/ic_profile_person_24" />
+                </androidx.cardview.widget.CardView>
 
         </androidx.appcompat.widget.Toolbar>
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewEmptyList"
@@ -37,12 +46,12 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="@dimen/textSize_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -52,8 +61,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbarHome"
-            />
+            app:layout_constraintTop_toBottomOf="@id/toolbarHome" />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -63,8 +71,8 @@
             android:layout_margin="@dimen/margin_fab"
             android:backgroundTint="@color/teal_200"
             android:src="@drawable/ic_baseline_add_24"
-            app:backgroundTint="@color/white"
             android:tint="@color/white"
+            app:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

@@ -4,13 +4,16 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 
-@Database(entities = [User::class,RegisterUser::class,UserProfile::class],version = 11, exportSchema = false)
+@Database(entities = [User::class,RegisterUser::class,UserProfile::class,UserImage::class],version = 13, exportSchema = false)
+@TypeConverters(TypeConverter::class)
 abstract class UserDatabase : RoomDatabase() {
 
     abstract fun userDao() : UserDao
     abstract fun registerUserDao() : RegisterUserDao
     abstract fun userProfileDao() : UserProfileDao
+    abstract fun userImageDao() : UserImageDao
 
     companion object {
         private var instance: UserDatabase? = null

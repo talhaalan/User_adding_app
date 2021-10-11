@@ -39,14 +39,17 @@ class RegisterFragment : Fragment() {
             editor.putBoolean("isRegister",isRegister)
             editor.apply()
 
+            if (username.isEmpty()) {
+                binding.editTextUsername.error = "Bu alan boş bırakılmaz"
+            } else if (password.isEmpty()) {
+                binding.editTextPassword.error = "Bu alan boş bırakılmaz"
+            } else {
+                var registerUser = RegisterUser(0,username,password)
 
+                database.registerUserDao().addRegisterUser(registerUser)
 
-            var registerUser = RegisterUser(0,username,password)
-
-            database?.registerUserDao()?.addRegisterUser(registerUser)
-
-            findNavController().navigate(R.id.action_registerFragment_to_userProfileFragment)
-
+                findNavController().navigate(R.id.action_registerFragment_to_userProfileFragment)
+            }
         }
 
         var sharedRegister = sharedPreferences.getBoolean("isRegister",false)
